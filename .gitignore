@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+dist/
+.superpowers/
+coverage/
+output/
+npm-debug.log*
