@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const css = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8');
 
 test('document is Hebrew RTL with the core slogan', () => {
   assert.match(html, /<html[^>]+lang="he"[^>]+dir="rtl"/);
@@ -74,4 +75,12 @@ test('WhatsApp CTAs are visually explicit and persist on mobile', () => {
   assert.match(html, /aria-label="פעולת הצטרפות מהירה"/);
   assert.match(html, /לחצי להצטרפות עכשיו/);
   assert.match(html, /פותח את קבוצת ה־WhatsApp/);
+});
+
+test('visual palette stays calm and aligned with the artwork', () => {
+  assert.match(css, /--bg: #fbf3ea;/);
+  assert.match(css, /--green: #95c7a2;/);
+  assert.match(css, /--coral: #d59b8a;/);
+  assert.match(css, /--teal: #6f9486;/);
+  assert.doesNotMatch(css, /#25d366|#31ed78|#18bf56|#42f283|#2bdc6e|#13aa4c/i);
 });
