@@ -542,6 +542,199 @@ h3 {
   font-weight: 850;
 }
 
+/* ── Registration form ────────────────────────────── */
+
+.register-section {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.register-form {
+  display: grid;
+  gap: 2rem;
+  max-width: 58rem;
+}
+
+.form-group {
+  margin: 0;
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 12px 34px rgba(82, 62, 49, 0.08);
+}
+
+.form-group legend {
+  padding: 0 0.5rem;
+  color: var(--text-strong);
+  font-size: 1.12rem;
+  font-weight: 920;
+}
+
+.legend-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field-label {
+  color: var(--text-strong);
+  font-size: 0.93rem;
+  font-weight: 850;
+}
+
+.field-label span {
+  color: var(--coral);
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(74, 58, 47, 0.22);
+  border-radius: 0.55rem;
+  background: var(--bg);
+  color: var(--text-strong);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(111, 148, 134, 0.2);
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+
+.check-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid rgba(74, 58, 47, 0.3);
+  border-radius: 0.28rem;
+  background: var(--bg);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.check-item input[type="checkbox"]:checked {
+  background: var(--teal);
+  border-color: var(--teal);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%23fff' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 65%;
+}
+
+.check-item--other {
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+}
+
+.other-input {
+  flex: 1 1 12rem;
+  min-height: 2.4rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(74, 58, 47, 0.22);
+  border-radius: 0.45rem;
+  background: var(--bg);
+  color: var(--text-strong);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.other-input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(111, 148, 134, 0.2);
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-submit {
+  align-self: flex-start;
+}
+
+.form-privacy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.form-success,
+.form-error {
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.75rem;
+}
+
+.form-success {
+  background: rgba(111, 148, 134, 0.12);
+  border: 1px solid rgba(111, 148, 134, 0.3);
+}
+
+.form-success p,
+.form-error p {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 1rem;
+}
+
+.form-success-title {
+  font-size: 1.2rem !important;
+  font-weight: 900;
+  margin-bottom: 0.3rem !important;
+}
+
+.form-error {
+  background: rgba(213, 155, 138, 0.12);
+  border: 1px solid rgba(213, 155, 138, 0.3);
+}
+
+@media (max-width: 660px) {
+  .form-fields,
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── End registration form ────────────────────────── */
+
 .final-cta {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;

@@ -240,6 +240,107 @@
         </a>
       </section>
 
+      <section class="register-section section-band" aria-labelledby="register-title">
+        <div class="section-heading">
+          <p class="community-line">חמ"ל נשים ואימהות</p>
+          <h2 id="register-title">ברוכה הבאה לחמ"ל ❤️</h2>
+          <p>
+            מטרת החמ"ל היא ליצור קהילה תומכת של נשים, אימהות ויחידניות, המעניקה
+            סיוע, אוזן קשבת, שיתופי פעולה ועזרה הדדית.
+          </p>
+        </div>
+
+        <form
+          id="register-form"
+          class="register-form"
+          action="#"
+          novalidate
+        >
+          <fieldset class="form-group">
+            <legend>פרטים אישיים</legend>
+            <div class="form-fields">
+              <label class="form-field">
+                <span class="field-label">שם מלא <span aria-hidden="true">*</span></span>
+                <input type="text" name="שם מלא" required autocomplete="name" />
+              </label>
+              <label class="form-field">
+                <span class="field-label">טלפון ליצירת קשר <span aria-hidden="true">*</span></span>
+                <input type="tel" name="טלפון" required autocomplete="tel" dir="ltr" />
+              </label>
+              <label class="form-field">
+                <span class="field-label">עיר מגורים</span>
+                <input type="text" name="עיר מגורים" autocomplete="address-level2" />
+              </label>
+              <label class="form-field">
+                <span class="field-label">גיל</span>
+                <input type="number" name="גיל" min="18" max="99" />
+              </label>
+              <label class="form-field">
+                <span class="field-label">מספר ילדים (אם יש)</span>
+                <input type="number" name="מספר ילדים" min="0" max="20" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>איך תרצי להשתלב בחמ"ל?</legend>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="זקוקה לעזרה ותמיכה" /><span>זקוקה לעזרה ותמיכה</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="מעוניינת להתנדב ולעזור לאחרות" /><span>מעוניינת להתנדב ולעזור לאחרות</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="יכולה לתרום ציוד" /><span>יכולה לתרום ציוד</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="יכולה לתרום מזון" /><span>יכולה לתרום מזון</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="יכולה לתרום בגדים" /><span>יכולה לתרום בגדים</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="יכולה לסייע בהסעות" /><span>יכולה לסייע בהסעות</span></label>
+              <label class="check-item"><input type="checkbox" name="השתלבות" value="סיוע רגשי והקשבה" /><span>סיוע רגשי והקשבה</span></label>
+              <label class="check-item check-item--other">
+                <input type="checkbox" name="השתלבות" value="אחר" id="join-other-check" />
+                <span>אחר:</span>
+                <input type="text" name="השתלבות – אחר" class="other-input" placeholder="פרטי..." />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>תחומי עזרה שאת זקוקה להם <span class="legend-note">(אם רלוונטי)</span></legend>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="מזון" /><span>מזון</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="ביגוד" /><span>ביגוד</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="ציוד לילדים" /><span>ציוד לילדים</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="ריהוט" /><span>ריהוט</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="עזרה כלכלית" /><span>עזרה כלכלית</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="מציאת עבודה" /><span>מציאת עבודה</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="תמיכה רגשית" /><span>תמיכה רגשית</span></label>
+              <label class="check-item"><input type="checkbox" name="עזרה נדרשת" value="סיוע משפטי" /><span>סיוע משפטי</span></label>
+              <label class="check-item check-item--other">
+                <input type="checkbox" name="עזרה נדרשת" value="אחר" id="help-other-check" />
+                <span>אחר:</span>
+                <input type="text" name="עזרה נדרשת – אחר" class="other-input" placeholder="פרטי..." />
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-footer">
+            <button type="submit" class="button button-primary primary-cta form-submit">
+              <span class="button-icon" aria-hidden="true">●</span>
+              <span class="cta-copy">
+                <span class="cta-main">שליחת הטופס</span>
+                <span class="cta-sub">פרטיך יישארו אצלנו בסוד</span>
+              </span>
+              <span class="cta-cue" aria-hidden="true">↗</span>
+            </button>
+            <p class="form-privacy">המידע מוגן ולא יועבר לגורמים חיצוניים.</p>
+          </div>
+
+          <div class="form-success" hidden aria-live="polite">
+            <p class="form-success-title">תודה רבה! ❤️</p>
+            <p>קיבלנו את פרטיך ונצור איתך קשר בקרוב.</p>
+          </div>
+          <div class="form-error" hidden aria-live="polite">
+            <p>משהו לא הצליח. אנא נסי שוב או צרי קשר ישירות.</p>
+          </div>
+        </form>
+      </section>
+
       <section class="final-cta" aria-labelledby="final-title">
         <div>
           <p class="community-line">יחד מחזירים תקווה לאימהות יחידניות</p>
@@ -269,7 +370,7 @@
 
     <footer class="site-footer">
       <p>© <span data-current-year></span> אף אחת לא נשארת לבד</p>
-      <p>עמוד קהילתי ללא טופס וללא איסוף פרטים אישיים.</p>
+      <p>עמוד קהילתי. פרטיך נשמרים בסוד ולא מועברים לצד שלישי.</p>
     </footer>
     <script type="module" src="./src/main.js"></script>
   </body>
