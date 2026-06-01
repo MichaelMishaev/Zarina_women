@@ -24,20 +24,36 @@ test('page has no contact form or personal-data fields', () => {
 test('SEO and social metadata are present', () => {
   assert.match(html, /<title>אף אחת לא נשארת לבד/);
   assert.match(html, /property="og:locale" content="he_IL"/);
-  assert.match(html, /property="og:image" content="\.\/assets\/whatsapp-group-picture\.png"/);
+  assert.match(html, /property="og:url" content="https:\/\/michaelmishaev\.github\.io\/Zarina_women\/"/);
+  assert.match(html, /property="og:image"[\s\S]+community-logo\.jpeg/);
+  assert.match(html, /property="og:image:width" content="1254"/);
+  assert.match(html, /property="og:image:height" content="1254"/);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /name="description"/);
 });
 
-test('local generated assets are referenced', () => {
-  assert.match(html, /src="\.\/assets\/hero-community\.png"/);
-  assert.match(html, /href="\.\/assets\/whatsapp-group-picture\.png"/);
+test('provided community images are used for identity and hero surfaces', () => {
+  assert.match(html, /class="hero-background"/);
+  assert.match(html, /src="\.\/assets\/community-hero\.jpeg"/);
+  assert.match(html, /src="\.\/assets\/community-logo\.jpeg"/);
+  assert.match(html, /href="\.\/assets\/community-logo\.jpeg"/);
+
+  const logo = statSync(new URL('../public/assets/community-logo.jpeg', import.meta.url));
+  const hero = statSync(new URL('../public/assets/community-hero.jpeg', import.meta.url));
+  assert.ok(logo.size > 1000);
+  assert.ok(hero.size > 1000);
 });
 
-test('polished header uses a generated community badge image', () => {
+test('polished header uses the community logo image', () => {
   assert.match(html, /class="brand-image"/);
-  assert.match(html, /src="\.\/assets\/header-community-badge\.png"/);
+  assert.match(html, /src="\.\/assets\/community-logo\.jpeg"/);
   assert.match(html, /alt=""/);
+});
 
-  const badge = statSync(new URL('../public/assets/header-community-badge.png', import.meta.url));
-  assert.ok(badge.size > 1000);
+test('WhatsApp CTAs are visually explicit and persist on mobile', () => {
+  assert.match(html, /class="[^"]*primary-cta/);
+  assert.match(html, /class="sticky-action-bar"/);
+  assert.match(html, /aria-label="פעולת הצטרפות מהירה"/);
+  assert.match(html, /לחצי להצטרפות עכשיו/);
+  assert.match(html, /פותח את קבוצת ה־WhatsApp/);
 });
