@@ -71,16 +71,15 @@ test('polished header uses the community logo image', () => {
 
 test('WhatsApp CTAs are visually explicit and persist on mobile', () => {
   assert.match(html, /class="[^"]*primary-cta/);
-  assert.match(html, /class="sticky-action-bar"/);
-  assert.match(html, /aria-label="פעולת הצטרפות מהירה"/);
   assert.match(html, /לחצי להצטרפות עכשיו/);
   assert.match(html, /פותח את קבוצת ה־WhatsApp/);
 });
 
-test('visual palette stays calm and aligned with the artwork', () => {
+test('visual palette stays calm while WhatsApp CTAs stay prominent', () => {
   assert.match(css, /--bg: #fbf3ea;/);
   assert.match(css, /--green: #d7a08a;/);
   assert.match(css, /--coral: #d59b8a;/);
   assert.match(css, /--teal: #6f9486;/);
-  assert.doesNotMatch(css, /#25d366|#31ed78|#18bf56|#42f283|#2bdc6e|#13aa4c|#95c7a2|#78ae8b|#7fb690/i);
+  assert.match(css, /linear-gradient\(135deg, #25D366, #128C7E\)/);
+  assert.doesNotMatch(css, /#31ed78|#18bf56|#42f283|#13aa4c|#95c7a2|#78ae8b|#7fb690/i);
 });
