@@ -24,7 +24,7 @@ test('page has no contact form or personal-data fields', () => {
 test('SEO and social metadata are present', () => {
   assert.match(html, /<title>אף אחת לא נשארת לבד/);
   assert.match(html, /property="og:locale" content="he_IL"/);
-  assert.match(html, /property="og:url" content="https:\/\/michaelmishaev\.github\.io\/Zarina_women\/"/);
+  assert.match(html, /property="og:url" content="https:\/\/mother\.netanya\.club\/"/);
   assert.match(html, /property="og:image"[\s\S]+community-logo\.jpeg/);
   assert.match(html, /property="og:image:width" content="1254"/);
   assert.match(html, /property="og:image:height" content="1254"/);
