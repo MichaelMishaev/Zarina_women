@@ -44,6 +44,24 @@ test('provided community images are used for identity and hero surfaces', () => 
   assert.ok(hero.size > 1000);
 });
 
+test('generated support illustrations are used in the support cards', () => {
+  const assets = [
+    'support-emotional.jpeg',
+    'support-practical.jpeg',
+    'support-volunteers.jpeg'
+  ];
+
+  for (const asset of assets) {
+    assert.match(html, new RegExp(`src="\\.\\/assets\\/${asset}"`));
+    const image = statSync(new URL(`../public/assets/${asset}`, import.meta.url));
+    assert.ok(image.size > 1000);
+  }
+
+  assert.match(html, /alt="איור של שתי נשים בשיחה תומכת ורגועה"/);
+  assert.match(html, /alt="איור של נשים מסדרות תרומות וציוד בסיסי בכבוד"/);
+  assert.match(html, /alt="איור של קבוצת נשים ומתנדבות עומדות יחד בקהילה"/);
+});
+
 test('polished header uses the community logo image', () => {
   assert.match(html, /class="brand-image"/);
   assert.match(html, /src="\.\/assets\/community-logo\.jpeg"/);
