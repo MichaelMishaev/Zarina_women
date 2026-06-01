@@ -79,8 +79,8 @@ test('WhatsApp CTAs are visually explicit and persist on mobile', () => {
 
 test('visual palette stays calm and aligned with the artwork', () => {
   assert.match(css, /--bg: #fbf3ea;/);
-  assert.match(css, /--green: #95c7a2;/);
+  assert.match(css, /--green: #d7a08a;/);
   assert.match(css, /--coral: #d59b8a;/);
   assert.match(css, /--teal: #6f9486;/);
-  assert.doesNotMatch(css, /#25d366|#31ed78|#18bf56|#42f283|#2bdc6e|#13aa4c/i);
+  assert.doesNotMatch(css, /#25d366|#31ed78|#18bf56|#42f283|#2bdc6e|#13aa4c|#95c7a2|#78ae8b|#7fb690/i);
 });

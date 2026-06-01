@@ -5,8 +5,8 @@
   --text: #332a24;
   --text-strong: #211915;
   --muted: #74665d;
-  --green: #95c7a2;
-  --green-dark: #4f7f66;
+  --green: #d7a08a;
+  --green-dark: #8b695c;
   --coral: #d59b8a;
   --teal: #6f9486;
   --gold: #c59a64;
@@ -47,7 +47,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(111, 148, 134, 0.58);
+  outline: 3px solid rgba(184, 127, 106, 0.58);
   outline-offset: 4px;
 }
 
@@ -120,7 +120,7 @@ button:focus-visible {
 }
 
 .brand-subtitle {
-  color: var(--green-dark);
+  color: var(--coral);
   font-size: 0.82rem;
   font-weight: 850;
   line-height: 1.15;
@@ -178,23 +178,23 @@ button:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-color: rgba(6, 32, 19, 0.08);
+  border-color: rgba(88, 55, 42, 0.12);
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 250, 243, 0.5), transparent 1.7rem),
-    linear-gradient(135deg, #b6d9b9, var(--green) 52%, #78ae8b);
-  color: #1f2b22;
+    linear-gradient(135deg, #e7bcaa, var(--green) 52%, #c88973);
+  color: #332016;
   box-shadow:
-    0 18px 40px rgba(111, 148, 134, 0.27),
-    0 0 0 5px rgba(149, 199, 162, 0.18);
+    0 18px 40px rgba(184, 127, 106, 0.24),
+    0 0 0 5px rgba(215, 160, 138, 0.18);
 }
 
 .button-primary:hover {
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 250, 243, 0.58), transparent 1.7rem),
-    linear-gradient(135deg, #c3dfc4, #a3cfab 52%, #7fb690);
+    linear-gradient(135deg, #ebc6b6, #ddb09d 52%, #ca907c);
   box-shadow:
-    0 22px 50px rgba(111, 148, 134, 0.32),
-    0 0 0 7px rgba(149, 199, 162, 0.2);
+    0 22px 50px rgba(184, 127, 106, 0.3),
+    0 0 0 7px rgba(215, 160, 138, 0.2);
 }
 
 .button-secondary {
@@ -216,24 +216,24 @@ button:focus-visible {
   min-height: 2.55rem;
   padding: 0.65rem 1rem;
   background: var(--green);
-  color: #1f2b22;
+  color: #332016;
   font-size: 0.92rem;
 }
 
 .header-cta {
   min-height: 2.75rem;
   padding-inline: 1.08rem;
-  box-shadow: 0 12px 24px rgba(111, 148, 134, 0.2);
+  box-shadow: 0 12px 24px rgba(184, 127, 106, 0.18);
 }
 
 .button-icon {
   width: 0.72rem;
   height: 0.72rem;
   border-radius: 50%;
-  background: var(--green-dark);
+  background: var(--teal);
   color: transparent;
   font-size: 0.8rem;
-  box-shadow: 0 0 0 6px rgba(79, 127, 102, 0.14);
+  box-shadow: 0 0 0 6px rgba(111, 148, 134, 0.13);
 }
 
 .primary-cta {
@@ -335,7 +335,7 @@ button:focus-visible {
 
 .community-line {
   margin: 0 0 0.9rem;
-  color: var(--green-dark);
+  color: var(--teal);
   font-size: 0.98rem;
   font-weight: 900;
 }
@@ -495,7 +495,7 @@ h3 {
   place-items: center;
   border-radius: 50%;
   background: var(--bg-soft);
-  color: var(--green-dark);
+  color: var(--coral);
   font-size: 1.4rem;
 }
 
@@ -538,7 +538,7 @@ h3 {
 }
 
 .group-picture-link {
-  color: var(--green-dark);
+  color: var(--coral);
   font-weight: 850;
 }
 
@@ -777,13 +777,13 @@ h3 {
   0%,
   100% {
     box-shadow:
-      0 18px 40px rgba(111, 148, 134, 0.27),
-      0 0 0 5px rgba(149, 199, 162, 0.18);
+      0 18px 40px rgba(184, 127, 106, 0.24),
+      0 0 0 5px rgba(215, 160, 138, 0.18);
   }
   50% {
     box-shadow:
-      0 24px 54px rgba(111, 148, 134, 0.34),
-      0 0 0 9px rgba(149, 199, 162, 0.22);
+      0 24px 54px rgba(184, 127, 106, 0.31),
+      0 0 0 9px rgba(215, 160, 138, 0.22);
   }
 }
 
