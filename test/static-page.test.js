@@ -16,10 +16,11 @@ test('primary WhatsApp group link and phone link are present', () => {
   assert.match(html, /050-9066422/);
 });
 
-test('page has no contact form or personal-data fields', () => {
-  assert.doesNotMatch(html, /<form[\s>]/i);
-  assert.doesNotMatch(html, /<input[\s>]/i);
-  assert.doesNotMatch(html, /textarea/i);
+test('registration form is present with required fields', () => {
+  assert.match(html, /<form[^>]+id="register-form"/i);
+  assert.match(html, /name="שם מלא"/);
+  assert.match(html, /name="טלפון"/);
+  assert.match(html, /name="עיר מגורים"/);
 });
 
 test('SEO and social metadata are present', () => {
@@ -35,9 +36,9 @@ test('SEO and social metadata are present', () => {
 
 test('provided community images are used for identity and hero surfaces', () => {
   assert.match(html, /class="hero-background"/);
-  assert.match(html, /src="\.\/assets\/community-hero\.jpeg"/);
-  assert.match(html, /src="\.\/assets\/community-logo\.jpeg"/);
-  assert.match(html, /href="\.\/assets\/community-logo\.jpeg"/);
+  assert.match(html, /src="\.\/public\/assets\/community-hero\.jpeg"/);
+  assert.match(html, /src="\.\/public\/assets\/community-logo\.jpeg"/);
+  assert.match(html, /href="\.\/public\/assets\/community-logo\.jpeg"/);
 
   const logo = statSync(new URL('../public/assets/community-logo.jpeg', import.meta.url));
   const hero = statSync(new URL('../public/assets/community-hero.jpeg', import.meta.url));
@@ -53,7 +54,7 @@ test('generated support illustrations are used in the support cards', () => {
   ];
 
   for (const asset of assets) {
-    assert.match(html, new RegExp(`src="\\.\\/assets\\/${asset}"`));
+    assert.match(html, new RegExp(`src="\\.\\/public\\/assets\\/${asset}"`));
     const image = statSync(new URL(`../public/assets/${asset}`, import.meta.url));
     assert.ok(image.size > 1000);
   }
@@ -65,7 +66,7 @@ test('generated support illustrations are used in the support cards', () => {
 
 test('polished header uses the community logo image', () => {
   assert.match(html, /class="brand-image"/);
-  assert.match(html, /src="\.\/assets\/community-logo\.jpeg"/);
+  assert.match(html, /src="\.\/public\/assets\/community-logo\.jpeg"/);
   assert.match(html, /alt=""/);
 });
 

@@ -866,9 +866,16 @@ h3 {
   .top-actions {
     width: 100%;
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "phone fb"
+      "cta   cta";
     gap: 0.7rem;
   }
+
+  .phone-link  { grid-area: phone; }
+  .fb-icon-link { grid-area: fb; align-self: center; justify-self: end; }
+  .header-cta  { grid-area: cta; }
 
   .hero,
   .intro-section,
