@@ -13,17 +13,22 @@ if (form) {
     const error = form.querySelector('.form-error');
 
     btn.disabled = true;
+    btn.classList.add('is-loading');
     btn.querySelector('.cta-main').textContent = 'שולח...';
 
     try {
-      const params = new URLSearchParams(new FormData(form));
-      await fetch(SHEET_URL + '?' + params.toString(), { mode: 'no-cors' });
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(new FormData(form)),
+      });
       form.querySelector('.form-footer').hidden = true;
       Array.from(form.querySelectorAll('fieldset')).forEach(f => (f.hidden = true));
       success.hidden = false;
     } catch {
       error.hidden = false;
       btn.disabled = false;
+      btn.classList.remove('is-loading');
       btn.querySelector('.cta-main').textContent = 'שליחת הטופס';
     }
   });
